@@ -28,4 +28,12 @@ Windows 환경에서 osquery를 활용한 보안 감사 자동화 프로젝트�
 
 & "C:\Program Files\osquery\osqueryd.exe" --config_path="configs\osquery.conf" --verbose
 
+<img width="972" height="510" alt="깃허브에 정리04" src="https://github.com/user-attachments/assets/55ffd625-a82a-44d7-b8e5-22037e980816" />
+
+## 인터랙티브로 실행한 결과(지금 스크린샷) 정리 방식
+쿼리 파일로 정리: 위 queries/*.sql 처럼 쿼리를 파일화.
+샘플 출력 저장: osqueryi --json "SELECT ..." 또는 PS 스크립트로 JSON 파일로 저장
+samples/ 폴더에 실제 출력 예시(JSON) 올리되, 민감한 IP/계정/도메인은 마스킹 처리.
+
+
 
