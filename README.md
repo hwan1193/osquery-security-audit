@@ -17,3 +17,11 @@ Windows 환경에서 osquery를 활용한 보안 감사 자동화 프로젝트�
 "C:\Program Files\osquery\osqueryi.exe"
 # 또는 단일 쿼리
 "C:\Program Files\osquery\osqueryi.exe" --json "SELECT * FROM listening_ports LIMIT 10;"
+
+## 파일로 결과 저장 (PowerShell)
+& "C:\Program Files\osquery\osqueryi.exe" --json "SELECT * FROM listening_ports;" | Out-File samples/osq_listening_example.json -Encoding utf8
+
+## 데몬/스케줄용 (osqueryd)
+& "C:\Program Files\osquery\osqueryd.exe" --config_path="configs\osquery.conf" --verbose
+
+
