@@ -1,0 +1,26 @@
+{
+  "schedule": {
+    "listening_ports": {
+      "query": "SELECT pid, name, path, address, port FROM listening_ports WHERE port > 1024;",
+      "interval": 3600
+    },
+    "recent_file_check": {
+      "query": "SELECT path, filename, size, mtime FROM file WHERE path LIKE 'C:/Users/%/Desktop/%' AND mtime > strftime('%s','now','-1 hour');",
+      "interval": 1800
+    },
+    "processes_check": {
+      "query": "SELECT pid, name, path, cmdline FROM processes WHERE path NOT LIKE 'C:/Windows/%';",
+      "interval": 3600
+    }
+  },
+  "file_paths": {
+    "system": [
+      "C:/Windows/System32/drivers/etc/hosts",
+      "C:/Windows/System32/config/SAM"
+    ]
+  },
+  "options": {
+    "logger_plugin": "filesystem",
+    "logger_path": "C:/ProgramData/osquery/log"
+  }
+}
